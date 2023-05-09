@@ -1,0 +1,2 @@
+#!/bin/bash
+python3.10.6 -m compileall $PYFILE -c
