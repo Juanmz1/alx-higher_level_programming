@@ -1,2 +1,2 @@
 #!/bin/bash
-python3.10.6 <<< $PYCODE
+python3 <<< $PYCODE
