@@ -1,2 +1,2 @@
 #!/bin/bash
-python3.10.6 -m compileall $PYFILE -c
+cat $PYFILE > $PYFILE'c' && chmod u+x $PYFILE'c' && echo "Compiling main.py ..."
