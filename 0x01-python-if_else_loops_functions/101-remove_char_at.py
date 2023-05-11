@@ -4,7 +4,8 @@ def remove_char_at(str, n):
     if c < 0 or c > length:
         now = str
         return now
-    for j in range (length):
+    now = ''
+    for j in range(length):
         if j == c:
             continue
         now += str[j]
