@@ -5,9 +5,8 @@ if __name__ == "__main__":
     c = ':'
     if length == 0:
         c = 's.'
-        print("{} argument{}".format(length, c))
     if length => 1:
         c = 's:'
-        print("{} argument{}".format(length, c))
+    print("{} argument{}".format(length, c))
     for i in range(1, length + 1):
         print("{} : {}".format(i, argv[i]))
