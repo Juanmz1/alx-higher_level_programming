@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    for i in "cC":
-    my_string_new = my_string.translate({ord(i): None})
-    return my_string_new
+    my_string_new = my_string.translate({ord("c"): None})
+    my_string_new_2 = my_string.translate({ord("C"): None})
+    return my_string_new and my_string_new_2
