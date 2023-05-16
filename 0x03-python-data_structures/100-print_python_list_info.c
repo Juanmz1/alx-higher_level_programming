@@ -6,7 +6,7 @@
  * @p: PyObject
  * Return: nothing
  */
-void print_python_list_info(PyObject *p);
+void print_python_list_info(PyObject *p)
 {
 	PyObject *items;
 	PyListObject *list = (PyListObject *)p;
@@ -20,7 +20,7 @@ void print_python_list_info(PyObject *p);
 
 	for (i = 0; i < size; i++)
 	{
-		items = PyList_getItem(p, i);
+		items = PyList_GetItem(p, i);
 		printf("Element with index: %d: %s\n", i, Py_TYPE(items)->tp_name);
 	}
 }
