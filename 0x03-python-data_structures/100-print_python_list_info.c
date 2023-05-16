@@ -10,17 +10,21 @@ void print_python_list_info(PyObject *p)
 {
 	PyObject *items;
 	PyListObject *list = (PyListObject *)p;
-	int size, alloca, i;
+	Py_ssize_t size, alloca;
+	int i = 0;
 
-	size = Py_SIZE(p);
-	alloca = list->allocated;
-
-	printf("size of python list: %d\n", size);
-	printf("numberv allocated: %d\n", alloca);
-
-	for (i = 0; i < size; i++)
+	if Pylist_CheckExact(p)
 	{
-		items = PyList_GetItem(p, i);
-		printf("Element with index: %d: %s\n", i, Py_TYPE(items)->tp_name);
+		size = PyList_SIZE(p);
+		alloca = list->allocated;
+		
+		printf("[*]size of python list: %li\n", size);
+		printf("[*]numberv allocated: %li\n", alloca);
+		
+		for (i = 0; i < size; i++)
+		{
+			items = PyList_GetItem(p, i);
+			printf("Element with index: %d: %s\n", i, Py_TYPE(items)->tp_name);
+		}
 	}
 }
