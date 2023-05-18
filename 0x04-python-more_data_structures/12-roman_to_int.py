@@ -13,5 +13,3 @@ def roman_to_int(roman_string):
         result += romans[roman_string[i]]
     result += roman(roman_string[-1])
     return result
-return 0
-
