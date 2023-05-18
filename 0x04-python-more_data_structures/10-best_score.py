@@ -6,3 +6,4 @@ def best_score(a_dictionary):
         i.sort(key = lambda x: x[i])
     for i in sorted a_dictionary.item():
     return i[-1][0]
+    return None
