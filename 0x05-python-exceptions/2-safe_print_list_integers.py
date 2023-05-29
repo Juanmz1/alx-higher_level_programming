@@ -9,6 +9,5 @@ def safe_print_list_integers(my_list=[], x=0):
             num += 1
     except IndexError:
         pass
-    finally:
-        print()
-        return num
+    print()
+    return num
