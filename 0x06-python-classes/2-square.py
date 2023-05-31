@@ -3,10 +3,7 @@
 
 
 class Square:
-    """ Represent a square
-    Attributes:
-    __size(int): size of the square
-    """
+    """ square with private instance attribute size """
     def __init__(self, size = 0):
         """ initialize a square
         Args:
@@ -19,12 +16,3 @@ class Square:
             raise ValueError(size must be >= 0)
         else:
             self.__size = size
-        def get_size(self):
-        """gets private attribute size
-
-        Returns:
-            size of square
-
-        """
-
-        return self.__size
