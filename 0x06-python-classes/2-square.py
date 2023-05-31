@@ -13,7 +13,6 @@ class Square:
         __size(int):size of the square
         Returns: None
         """
-        self.__size = size
         if type(size) is not int:
             raise TypeError(size must be an integer)
         else:
