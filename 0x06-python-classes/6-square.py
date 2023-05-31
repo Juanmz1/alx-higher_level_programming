@@ -1,5 +1,7 @@
-    #!/usr/bin/python3
+#!/usr/bin/python3
 """ define class square """
+
+
 class Square:
     """ Represent a square
     Attributes:
@@ -14,6 +16,7 @@ class Square:
     def size(self):
         """ Retrieve the size"""
         return self.__size
+
     @size.setter
     def size(self, value):
         """setter of __size
@@ -28,11 +31,13 @@ class Square:
             raise ValueError(size must be >= 0)
         else:
             self.__size = value
+
     @property
     def position(self):
         """ Get the current position of the size
         """
         return self.__position
+
     @position.setter
     def position(self, value):
         """set the setter fot the current position
@@ -48,11 +53,13 @@ class Square:
                 raise TypeError(msg)
         else:
             raise TypeError(msg)
+
     def area(self):
         """ Define area of square
         Returns: Area of square
         """
         return self.__size ** 2
+
     def my_print(self):
         """ prints the square
         Returns: None
