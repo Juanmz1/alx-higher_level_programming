@@ -13,7 +13,7 @@ class Square:
         __size(int):size of the square
         Returns: None
         """
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
@@ -27,14 +27,14 @@ class Square:
             value (int): the size of a size of the square
         Returns:
             None
-            """
-            if type(size) is int:
-            if size < 0:
-                raise ValueError('size must be >= 0')
-            else:
-                self.__size = size
+        """
+        if type(value) is not int:
+            raise TypeError("size must be an integer")
         else:
-            raise TypeError('size must be an integer')
+            if value < 0:
+                raise ValueError("size must be >= 0")
+            else:
+                self.__size = value
 
     def area(self):
         """ Define area of square

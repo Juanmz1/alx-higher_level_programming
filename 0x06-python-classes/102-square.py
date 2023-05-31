@@ -30,11 +30,12 @@ class Square:
             None
         """
         if type(value) is not int:
-            raise TypeError(size must be an integer)
-        elif size < 0:
-            raise ValueError(size must be >= 0)
+            raise TypeError("size must be an integer")
         else:
-            self.__size = value
+            if value < 0:
+                raise ValueError("size must be >= 0")
+            else:
+                self.__size = value
 
     def area(self):
         """ Define area of square

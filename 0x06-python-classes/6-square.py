@@ -12,6 +12,9 @@ class Square:
         Args:
         __size(int): size of the square
         """
+        self.__size = size
+        self.__position = position
+
     @property
     def size(self):
         """ Retrieve the size"""
@@ -26,11 +29,12 @@ class Square:
             None
         """
         if type(value) is not int:
-            raise TypeError(size must be an integer)
-        elif size < 0:
-            raise ValueError(size must be >= 0)
+            raise TypeError("size must be an integer")
         else:
-            self.__size = value
+            if value < 0:
+                raise ValueError("size must be >= 0")
+            else:
+                self.__size = value
 
     @property
     def position(self):
