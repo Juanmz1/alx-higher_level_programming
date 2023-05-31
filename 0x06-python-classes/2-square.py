@@ -5,11 +5,11 @@
 class Square:
     """ square with private instance attribute size """
     def __init__(self, size = 0):
-        """ initialize a square
-        Args:
-        __size(int):size of the square
-        Returns: None
         """
+        Args:
+            size: size of square
+        """
+
         if type(size) is int:
             if size < 0:
                 raise ValueError('size must be >= 0')
