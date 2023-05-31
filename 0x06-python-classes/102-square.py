@@ -43,7 +43,7 @@ class Square:
         """
         return self.__size ** 2
 
-     def __lt__(self, other):
+    def __lt__(self, other):
         """Compare if square is less than another by area
         Args:
             other (Square): square to compare against
