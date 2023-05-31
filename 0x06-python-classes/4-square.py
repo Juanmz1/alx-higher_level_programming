@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ define class square """
-class square:
+class Square:
     """ Represent a square
     Attributes:
     __size(int): size of the square
@@ -29,7 +29,7 @@ class square:
             raise ValueError(size must be >= 0)
         else:
             self.__size = value
-    def Area(self):
+    def area(self):
         """ Define area of square
         Returns: Area of square
         """
