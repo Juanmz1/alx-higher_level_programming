@@ -23,10 +23,12 @@ class Rectangle:
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
+
     def __del__(self):
         """ print a string when a instances have been deleted """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+
     @property
     def width(self):
         """ getter of the private instances attribute """
@@ -52,14 +54,17 @@ class Rectangle:
         if type(value) is not int:
             raise TypeError("height must be an integer")
         self.__height = value
+
     def area(self):
         """ that returns the rectangle area """
         return self.__width * self.__height
+
     def perimeter(self):
         """ that returns the rectangle perimeter """
         if self.__width != 0 and self.__height != 0:
             return ((self.__width + self.__height) * 2)
         return 0
+
     def __str__(self):
         """ print the rectangle with the character # """
         strg = ""
@@ -67,6 +72,7 @@ class Rectangle:
             strg += "\n".join(str(self.print_symbol) * self.__width
                                 for j in range(self.__height))
         return strg
+
     def __repr__(self):
         """ return a string representation of the rectangle        to be able to recreate a new instances
         """
