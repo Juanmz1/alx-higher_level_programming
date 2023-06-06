@@ -1,13 +1,17 @@
 #!/usr/bin/python3
 """ Define a class rectangle """
+
+
 class Rectangle:
     """ class of rectangle """
     number_of_instances = 0
     print_symbol = "#"
 
     @classmethod
-    """ that returns a new Rectangle instance with width == height == size """
     def square(cls, size=0):
+        """
+        that returns a new Rectangle instance with width == height == size
+        """
         return cls(size, size)
 
     @staticmethod
@@ -17,12 +21,14 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if type(rect_2) is not Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
-        return rect_1 if rect_1.area() >= rect_2.area() else return rect_2
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        return rect_2
 
     def __init__(self, width=0, height=0):
         """ initialize the rectangle """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
     def __del__(self):
         """ print a string when a instances have been deleted """
@@ -33,7 +39,7 @@ class Rectangle:
         """ getter of the private instances attribute """
         return self.__width
 
-    @value.setter
+    @width.setter
     def width(self, value):
         """ setter of the private instancez attribute """
         if type(value) is not int:
@@ -47,7 +53,7 @@ class Rectangle:
         """ getter of the private instances attribute """
         return self.__height
 
-    @value.setter
+    @height.setter
     def height(self, value):
         """ setter of the private instancez attribute """
         if type(value) is not int:
@@ -65,7 +71,8 @@ class Rectangle:
         """ print the rectangle with the character # """
         strg = ""
         if self.__width != 0 and self.__height != 0:
-            strg += "\n".join(str(print_symbol) * self.__width for j in range(self.__height)
+            strg += "\n".join(str(self.print_symbol) * self.__width
+                                for j in range(self.__height))
         return strg
     def __repr__(self):
         """ return a string representation of the rectangle        to be able to recreate a new instances

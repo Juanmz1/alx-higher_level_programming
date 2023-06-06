@@ -1,17 +1,19 @@
 #!/usr/bin/python3
 """ Define a class rectangle """
+
+
 class Rectangle:
-""" class of rectangle """
+    """ class of rectangle """
     def __init__(self, width=0, height=0):
         """ initialize the rectangle """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
     @property
     def width(self):
         """ getter of the private instances attribute """
         return self.__width
 
-    @value.setter
+    @width.setter
     def width(self, value):
         """ setter of the private instancez attribute """
         if type(value) is not int:
@@ -25,7 +27,7 @@ class Rectangle:
         """ getter of the private instances attribute """
         return self.__height
 
-    @value.setter
+    @height.setter
     def height(self, value):
         """ setter of the private instancez attribute """
         if type(value) is not int:
@@ -45,7 +47,8 @@ class Rectangle:
         """ print the rectangle with the character # """
         strg = ""
         if self.__width != 0 and self.__height != 0:
-            strg += "\n".join("#" * self.__width for j in range(self.__height)
+            strg += "\n".join("#" * self.__width
+                                for j in range(self.__height))
         return strg
     def __repr__(self):
         """ return a string representation of the rectangle
