@@ -14,7 +14,7 @@ class Rectangle:
         """ getter of the private instances attribute """
         return self.__width
 
-    @value.setter
+    @width.setter
     def width(self, value):
         """ setter of the private instancez attribute """
         if type(value) is not int:
@@ -28,7 +28,7 @@ class Rectangle:
         """ getter of the private instances attribute """
         return self.__height
 
-    @value.setter
+    @heigth.setter
     def height(self, value):
         """ setter of the private instancez attribute """
         if type(value) is not int:
