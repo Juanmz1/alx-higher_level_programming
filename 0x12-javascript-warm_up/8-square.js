@@ -8,6 +8,6 @@ else{
     let row = '';
     for (let j = 0; j < x; j++){
       row += 'X';
-      console.log('C is fun');
+      console.log(row);
     };
 }; 
