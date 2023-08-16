@@ -13,5 +13,5 @@ for (const j in valUniq) {
     }
   }
   newDict[valUniq[j]] = list;
-}
+};
 console.log(newDict);
