@@ -1,9 +1,9 @@
 #!/usr/bin/node
-const mydict = require('./101-data').dict;
+const dict = require('./101-data').dict;
 
-const totatList = Object.entries(mydict);
-const val = Object.values(mydict);
-const valUniq = [...new Set(val)];
+const totatList = Object.entries(dict);
+const valu = Object.values(dict);
+const valUniq = [...new Set(valu)];
 const newDict = {};
 for (const j in valUniq) {
   const list = [];
