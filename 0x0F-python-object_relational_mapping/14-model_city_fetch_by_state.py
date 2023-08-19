@@ -15,11 +15,12 @@ if __name__ == "__main__":
     database = sys.argv[3]
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                            .format(username, password, database))
+                           .format(username, password, database))
 
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for new_states in session.query(State.name, City.id,
-            City.name).filter(State.id == City.id):
-        print(new_states[0] + ":(" +str(new_states[1]) + ") " + new_states[2])
+    for new_states in session.query(State.name, City.id, City.name)\
+            .filter(State.id == City.id):
+        print(new_states[0] + ":(" + str(new_states[1]) + ") "
+              + new_states[2])

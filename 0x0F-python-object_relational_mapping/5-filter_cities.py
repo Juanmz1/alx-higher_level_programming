@@ -13,13 +13,14 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
 
-    db = MySQLdb.execute(host="localhost", user = username, passwd = password,
-            db = database, port=3306)
+    db = MySQLdb.execute(host="localhost", user=username, passwd=password,
+                         db=database, port=3306)
 
     cur = db.cursor()
-    cur.execute("SELECT cities.name FROM
-                cities INNER JOIN states ON states.id=cities.state_id
-                WHERE states.name = %s ORDER BY cities.id ASC", (sys.argv[4], ))
+    cur.execute("SELECT cities.name FROM\
+                cities INNER JOIN states ON states.id=cities.state_id\
+                WHERE states.name = %s ORDER\
+                BY cities.id ASC", (sys.argv[4], ))
     rows = cur.fetchall()
     temp = list(row[0] for row in rows)
     print(*temp, sep=", ")
