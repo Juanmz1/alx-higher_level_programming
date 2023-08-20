@@ -3,9 +3,9 @@
 
 from sqlalchemy import Integer, String, Column, MetaData, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from model_state import Base
+from model_state import Base, State
 
-Base = dclarative_base()
+Base = declarative_base()
 
 class City(Base):
     """ class of city """

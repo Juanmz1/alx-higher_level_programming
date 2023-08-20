@@ -4,8 +4,6 @@
 from sqlalchemy import Integer, String, Column, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-from relationship_city import City, Base
-
 Base = declarative_base()
 
 
