@@ -14,13 +14,13 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
 
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+    engine = create_engine('mysql+mysqldb://:{}:{}@localhost:3306/{}'
                            .format(username, password, database))
 
-    Base.create_all(engine)
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).order_by(State.id).first()
+    states = session.query(State).first()
     if states is None:
         print("Nothing")
     else:
