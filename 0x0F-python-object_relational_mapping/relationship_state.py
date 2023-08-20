@@ -4,9 +4,9 @@
 from sqlalchemy import Integer, String, Column, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
+from relationship_city import City, Base
 
-mymetadata = MetaData()
-Base = declarative_base(metadata=mymetadata)
+Base = declarative_base()
 
 
 class State(Base):
